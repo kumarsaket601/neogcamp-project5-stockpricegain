@@ -21,6 +21,7 @@ function calculateProfit(purchasePrice,stockQuantity,currentPrice){
 }
 
 function calculateLoss(purchasePrice,stockQuantity,currentPrice){
+
    invested = purchasePrice * stockQuantity;
    currentValue = currentPrice * stockQuantity;
    
@@ -34,7 +35,7 @@ function calculateLoss(purchasePrice,stockQuantity,currentPrice){
 
 function stockPriceHandler(){
 
-    if(currentPrice.value > purchasePrice.value){
+    if(currentPrice.value >= purchasePrice.value){
 
         calculateProfit(purchasePrice.value,stockQuantity.value,currentPrice.value);
 
