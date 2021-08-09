@@ -29,7 +29,7 @@ function changeInPrice(invested, currentValue) {
 function stockPriceHandler() {
 
 
-    var invested = purchasePrice.value * stockQuantity.value;
+    var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
     var currentValue = currentPrice.value * stockQuantity.value;
 
     if (currentValue >= invested) {
