@@ -3,51 +3,59 @@ var stockQuantity = document.querySelector("#stock-quantity");
 var currentPrice = document.querySelector("#current-price");
 var checkButton = document.querySelector("#check-button");
 var display = document.querySelector(".output");
-var log = console.log;
- var invested;
- var currentValue;
 
-function calculateProfit(purchasePrice,stockQuantity,currentPrice){
+function lossInPrice(invested,currentValue){
 
-    invested = purchasePrice * stockQuantity;
-    currentValue = currentPrice * stockQuantity;
-
-    var totalProfit = currentValue - invested;
-
-    var percentageGained = Math.round((totalProfit / invested)*100);
-   
-    display.innerText = "You gained " + percentageGained + "%." + "Your total profit is ₹" + totalProfit +"."; 
+    var currentLoss = invested - currentValue;
     
+    return currentLoss;
 }
+function calculatePercentageGain(profitBook, invested) {
 
-function calculateLoss(purchasePrice,stockQuantity,currentPrice){
+    var percentGained = (profitBook / invested) * 100;
 
-   invested = purchasePrice * stockQuantity;
-   currentValue = currentPrice * stockQuantity;
-   
-   var  totalLoss = invested - currentValue;
-   var  percentageLoss = Math.round((totalLoss/invested)*100);
-    
-   display.innerText = "You gained " + percentageLoss + "%." + "Your total profit is ₹" + totalLoss +".";
-
+    return percentGained;
 
 }
 
-function stockPriceHandler(){
+function changeInPrice(invested, currentValue) {
 
-    if(currentPrice.value >= purchasePrice.value){
+    var difference = currentValue - invested;
 
-        calculateProfit(purchasePrice.value,stockQuantity.value,currentPrice.value);
+    return difference;
+
+}
+
+function stockPriceHandler() {
+
+
+    var invested = purchasePrice.value * stockQuantity.value;
+    var currentValue = currentPrice.value * stockQuantity.value;
+
+    if (currentValue >= invested) {
+
+        var profitBook = changeInPrice(invested, currentValue);
+
+        var percentGained = calculatePercentageGain(profitBook, invested);
+
+        display.innerText = "Your profit is " + profitBook + " and Percent Gained " + percentGained + "%.";
+    }
+
+    else{
+
+        var lossesBook = lossInPrice(invested,currentValue);
+        var losses = percentageLoss(lossesBook,invested);
+
+         display.innerText = "You lossed  " + lossesBook + " and Percent Loss " + losses + "%.";
 
     }
-    else {
-
-        calculateLoss(purchasePrice.value,stockQuantity.value,currentPrice.value);
-    }
-
-    
 
 
-};
+          
+
+
+
+
+}
 
 checkButton.addEventListener('click', stockPriceHandler)
