@@ -25,7 +25,7 @@ function calculatePercentageGain(profitBook, invested) {
 
 }
 
-function changeInPrice(invested, currentValue) {
+function changeInPrice(invested,currentValue) {
 
     var difference = currentValue - invested;
 
@@ -41,9 +41,9 @@ function stockPriceHandler() {
 
     if (currentValue >= invested) {
 
-        var profitBook = changeInPrice(invested, currentValue);
+        var profitBook = changeInPrice(invested,currentValue);
 
-        var percentGained = calculatePercentageGain(profitBook, invested);
+        var percentGained = calculatePercentageGain(profitBook,invested);
 
         
     }
