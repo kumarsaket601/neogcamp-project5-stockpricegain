@@ -19,7 +19,7 @@ function lossInPrice(invested,currentValue){
 }
 function calculatePercentageGain(profitBook, invested) {
 
-    var percentGained = (profitBook / invested) * 100;
+    var percentGained = (profitBook / invested)*100;
 
     return percentGained;
 
