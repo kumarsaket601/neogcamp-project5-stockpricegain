@@ -11,16 +11,7 @@ body{
     color: var(--secondary-color);
     margin: 5rem auto;
 }
-.navigation {
-    text-align: right;
-    margin-right: 2rem;
-    
-}
-.navigation a{
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
+
 .container{
 
     margin:auto;
