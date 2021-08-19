@@ -11,7 +11,16 @@ body{
     color: var(--secondary-color);
     margin: 5rem auto;
 }
-
+.navigation {
+    text-align: right;
+    margin-right: 2rem;
+    
+}
+.navigation a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 .container{
 
     margin:auto;
@@ -30,7 +39,7 @@ label,input{
      
 }
 input{
-   padding: 0.3rem 0.3rem;
+    padding: 0.3rem 0.3rem;
     margin: 1rem auto;
     border-color: white;
     border-radius: 0.4rem;
@@ -47,7 +56,7 @@ input{
     font-weight: bold;
 }
 .output{
-    background-color: var(--secondary-color);
+    background-color: white;
     padding: 1rem 2rem;
     color: var(--primary-color);
     margin-top: 1rem;
