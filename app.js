@@ -37,45 +37,51 @@ function changeInPrice(invested, currentValue) {
 
 function stockPriceHandler() {
 
-     
 
-   
-        
-   
+
+
+
+
 
 
     var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
     var currentValue = Number(currentPrice.value) * Number(stockQuantity.value);
 
-    if(Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 && Number(stockQuantity.value) >= 0){
+    if (Number(currentPrice.value) != "" && Number(purchasePrice.value) != "" && Number(stockQuantity.value) != "") {
+        if (Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 && Number(stockQuantity.value) >= 0) {
 
 
-         if ( Number(currentPrice.value) >= Number(purchasePrice.value)) {
+            if (Number(currentPrice.value) >= Number(purchasePrice.value)) {
 
-        var profitBook = changeInPrice(invested, currentValue);
+                var profitBook = changeInPrice(invested, currentValue);
 
-        var percentGained = calculatePercentageGain(profitBook, invested);
+                var percentGained = calculatePercentageGain(profitBook, invested);
 
-        display.innerText = "Your profit is " + profitBook + " and Percent Gained " + percentGained + "%.";
+                display.innerText = "Your profit is " + profitBook + " and Percent Gained " + percentGained + "%.";
 
+            } else {
+
+                var lossesBook = lossInPrice(invested, currentValue);
+                var losses = percentageLoss(lossesBook, invested);
+
+                display.innerText = "You lossed  " + lossesBook + " and Percent Loss " + losses + "%.";
+
+            }
+        } else {
+
+            display.innerText = "Please provide with the positive value";
+        }
     } else {
-
-        var lossesBook = lossInPrice(invested, currentValue);
-        var losses = percentageLoss(lossesBook, invested);
-
-         display.innerText = "You lossed  " + lossesBook + " and Percent Loss " + losses + "%.";
-
-    }
-    }else{
-
-        display.innerText = "Please provide with the positive value";
+        display.innerText = "Provide some value in the input";
     }
 
-    
 
 
 
-   
+
+
+
+
 
 
 }
