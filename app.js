@@ -47,7 +47,7 @@ function stockPriceHandler() {
     var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
     var currentValue = Number(currentPrice.value) * Number(stockQuantity.value);
 
-    if(Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 ){
+    if(Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 && Number(stockQuantity.value) >= 0){
 
 
          if ( Number(currentPrice.value) >= Number(purchasePrice.value)) {
@@ -69,7 +69,7 @@ function stockPriceHandler() {
     }else{
 
         display.innerText = "Please provide with the positive value";
-;    }
+    }
 
     
 
