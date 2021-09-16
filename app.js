@@ -47,7 +47,7 @@ function stockPriceHandler() {
     var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
     var currentValue = Number(currentPrice.value) * Number(stockQuantity.value);
 
-    if (Number(currentPrice.value) != "" && Number(purchasePrice.value) != "" && Number(stockQuantity.value) != "") {
+    if (Number(currentPrice.value) !== "" && Number(purchasePrice.value) !== "" && Number(stockQuantity.value) !== "") {
         if (Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 && Number(stockQuantity.value) >= 0) {
 
 
