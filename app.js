@@ -37,8 +37,7 @@ function changeInPrice(invested, currentValue) {
 
 function stockPriceHandler() {
 
-     var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
-    var currentValue = Number(currentPrice.value) * Number(stockQuantity.value);
+     
 
    
         
@@ -48,7 +47,10 @@ function stockPriceHandler() {
     var invested = Number(purchasePrice.value) * Number(stockQuantity.value);
     var currentValue = Number(currentPrice.value) * Number(stockQuantity.value);
 
-    if ( Number(currentPrice.value) >= Number(purchasePrice.value)) {
+    if(Number(currentPrice.value) >= 0 && Number(purchasePrice.value) >= 0 ){
+
+
+         if ( Number(currentPrice.value) >= Number(purchasePrice.value)) {
 
         var profitBook = changeInPrice(invested, currentValue);
 
@@ -64,6 +66,12 @@ function stockPriceHandler() {
          display.innerText = "You lossed  " + lossesBook + " and Percent Loss " + losses + "%.";
 
     }
+    }else{
+
+        display.innerText = "Please provide with the positive value";
+;    }
+
+    
 
 
 
